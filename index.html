@@ -188,8 +188,8 @@ nav {
 .modal-tabs { display: flex; height: 100%; }
 .tab-btn {
   background: transparent; border: none; padding: 24px 40px;
-  font-family: 'Montserrat', 'Pretendard', sans-serif; font-size: 15px; font-weight: 800;
-  color: var(--text-500); cursor: pointer; transition: 0.2s; letter-spacing: 0.5px;
+  font-family: 'Pretendard', sans-serif; font-size: 16px; font-weight: 800;
+  color: var(--text-500); cursor: pointer; transition: 0.2s; letter-spacing: -0.5px;
 }
 .tab-btn.active { color: var(--text-900); background: #fff; border-top: 3px solid var(--accent-gold); }
 .tab-btn:hover:not(.active) { color: var(--text-900); background: rgba(255,255,255,0.5); }
@@ -208,7 +208,7 @@ nav {
 .cv-title { font-size: 28px; font-weight: 900; color: var(--text-900); margin-bottom: 8px; letter-spacing: -0.5px; }
 .cv-sub { font-size: 15px; font-weight: 600; color: var(--text-500); }
 .cv-section { margin-bottom: 48px; }
-.cv-sec-title { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 900; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+.cv-sec-title { font-family: 'Pretendard', sans-serif; font-size: 15px; font-weight: 900; color: var(--accent-gold); letter-spacing: 0.5px; margin-bottom: 20px; }
 .cv-tl-item { display: flex; gap: 24px; margin-bottom: 24px; }
 .cv-tl-year { width: 120px; flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800; color: var(--text-900); text-align: right; }
 .cv-tl-body { flex: 1; padding-left: 24px; border-left: 2px solid var(--border-light); position: relative; }
@@ -218,8 +218,8 @@ nav {
 .cv-desc { font-size: 14.5px; color: var(--text-700); line-height: 1.6; word-break: keep-all; font-weight: 500; }
 
 .nav-sq { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--text-900); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 900; margin-right: 8px; letter-spacing: 0; }
-.track-record-band { background: rgba(19, 34, 56, 0.03); border-top: 1px solid rgba(19, 34, 56, 0.15); border-bottom: 1px solid rgba(19, 34, 56, 0.15); padding: 16px 0; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; color: var(--text-500); letter-spacing: 2px; }
-.track-record-band span { color: var(--text-900); margin: 0 16px; font-family: 'Pretendard', sans-serif; font-weight: 700; letter-spacing: 0.5px; }
+.track-record-band { background: rgba(19, 34, 56, 0.03); border-top: 1px solid rgba(19, 34, 56, 0.15); border-bottom: 1px solid rgba(19, 34, 56, 0.15); padding: 16px 0; text-align: center; font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 800; color: var(--text-500); letter-spacing: 1px; }
+.track-record-band span { color: var(--text-900); margin: 0 16px; font-weight: 800; letter-spacing: 0.5px; }
 
 @media(max-width: 1024px) {
   .col-2, .col-3 { flex: 1 1 100%; }
@@ -229,7 +229,7 @@ nav {
   .floating-cta { display: none; }
   .hero-wrapper { padding: 80px 24px 0; }
   body { padding-bottom: 0; }
-  .tab-btn { padding: 20px 16px; font-size: 13px; }
+  .tab-btn { padding: 20px 16px; font-size: 14px; }
   .tab-content { padding: 24px; }
   .cv-tl-item { flex-direction: column; gap: 8px; }
   .cv-tl-year { text-align: left; width: auto; }
@@ -247,7 +247,7 @@ nav {
       ENTROPRO
     </div>
     <div style="display: flex; align-items: center; gap: 24px;">
-      <a onclick="openModal('profile')" class="nav-cv-link">엔트로프로 전세훈 대표 프로필 열람</a>
+      <a onclick="openModal('profile')" class="nav-cv-link">대표 파트너 이력 및 레퍼런스</a>
       <div class="label-outline" style="margin: 0; padding: 6px 12px; display: none; @media(min-width: 600px){ display: inline-flex; }">Business Engineer</div>
     </div>
   </div>
@@ -270,7 +270,7 @@ nav {
   
   <div class="grid-row hero-wrapper">
     <div class="cell col-1" style="border-right: none; border-bottom: none; padding-bottom: 70px;">
-      <div class="label-box">Business Engineer</div>
+      <div class="label-box">비즈니스 엔지니어</div>
       <h1 class="text-huge" style="margin-bottom: 24px;">STRUCTURE<br>THE EXIT.</h1>
       <p class="title-kr" style="margin-bottom: 40px; max-width: 800px;">
         자본의 흐름을 잇고,<br>엑시트의 구조를 설계합니다.
@@ -292,13 +292,13 @@ nav {
       </div>
       <div class="hero-stat">
         <div class="stat-num">16년+</div>
-        <div class="stat-label">Deep-Tech 실무 경력<br><span style="font-weight:500; color:var(--text-500);">(석유화학·2차전지 현장 + M&A + 벤처투자)</span></div>
+        <div class="stat-label">딥테크 실무 경력<br><span style="font-weight:500; color:var(--text-500);">(석유화학·2차전지 현장 + M&A + VC)</span></div>
       </div>
     </div>
   </div>
 
   <div class="track-record-band">
-    CORE TRACK RECORD : 
+    핵심 실무 거점 : 
     <span>대림산업</span> • 
     <span>이수화학</span> • 
     <span>로이투자파트너스</span> • 
@@ -307,8 +307,8 @@ nav {
 
   <div class="grid-row">
     <div class="cell col-1 cell-dark">
-      <div class="label-box" style="background: #fff; color: var(--text-900);">THE STRUCTURE</div>
-      <h2 class="title-kr" style="margin-bottom: 56px;">문제를 주시면, 구조(Structure)를 짜서 함께 해결합니다.</h2>
+      <div class="label-box" style="background: #fff; color: var(--text-900);">업무 구조 (THE STRUCTURE)</div>
+      <h2 class="title-kr" style="margin-bottom: 56px;">문제를 주시면, 구조를 짜서 함께 해결합니다.</h2>
       
       <div style="display: flex; flex-wrap: wrap; gap: 64px;">
         <div style="flex: 1; min-width: 300px;">
@@ -322,14 +322,14 @@ nav {
           <h3 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 20px; line-height: 1;">02</h3>
           <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">엑시트의 문턱을 넘는 턴어라운드</h4>
           <p class="body-text">
-            여러 가지 이슈가 있어서 Exit 가능성이 낮은 포트폴리오 기업에 일종의 인하우스 파트너로 투입됩니다.<br>각 분야별 전문가 네트워크를 애자일하게 가동하여 기업의 체질을 개선하고, 투자사/기업 모두가 수용 가능한 매력적인 엑시트 구조를 설계합니다.
+            여러 가지 이슈가 있어서 Exit 가능성이 낮은 포트폴리오 기업에 일종의 인하우스 파트너로 투입됩니다.<br>각 분야별 전문가 네트워크를 가동하여 기업의 체질을 개선하고, 투자사/기업 모두가 수용 가능한 매력적인 엑시트 구조를 설계합니다.
           </p>
         </div>
         <div style="flex: 1; min-width: 300px;">
           <h3 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 20px; line-height: 1;">03</h3>
           <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">조용하고 묵직한 기밀 유지</h4>
           <p class="body-text">
-            정보가 생명인 시장에서, 하우스의 약점을 노출하지 않고 조용히 움직입니다.<br>대외적으로 해당 딜과 관련된 정보를 최대한 프라이빗하게 관리하며, 불필요한 시장의 소음을 차단합니다.
+            정보가 생명인 시장에서, 하우스의 약점을 노출하지 않고 조용히 움직입니다.<br>대외적으로 해당 딜과 관련된 정보를 최대한 비공개로 관리하며, 불필요한 시장의 소음을 차단합니다.
           </p>
         </div>
       </div>
@@ -347,28 +347,28 @@ nav {
     
     <div class="cell col-3" style="background: #fff;">
       <div class="font-eng" style="font-size: 48px; font-weight: 900; color: var(--text-900); margin-bottom: 24px; line-height: 1;">II.</div>
-      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">창업지원기관 강의·<br>심사·멘토링 매칭</h3>
+      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">창업지원기관 강의·<br>심사·자문 매칭</h3>
       <p class="body-text">
-        창업보육기관과 실력 있는 투자심사역을 조용히 잇습니다.<br><br>하단 폼에 심사역님의 '프로필 링크'를 가볍게 작성해주시면, 기관의 섭외 니즈와 부합할 때만 별도로 연락드립니다.
+        창업보육기관과 실력 있는 투자심사역을 조용히 잇습니다.<br><br>하단 폼에 심사역님의 프로필을 가볍게 남겨주시면, 기관의 섭외 조건과 부합할 때만 별도로 연락드립니다.
       </p>
     </div>
 
     <div class="cell col-3" style="background: rgba(255,255,255,0.65);">
       <div class="font-eng" style="font-size: 48px; font-weight: 900; color: var(--text-900); margin-bottom: 24px; line-height: 1;">III.</div>
-      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">프라이빗 딜 소싱 &<br>객관적 딜 레퍼런스</h3>
+      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">비공개 딜 소싱 &<br>객관적 평판 조회</h3>
       <p class="body-text">
-        무분별한 정보의 비대칭을 정돈합니다.<br><br>특정 조건에 맞춰 대중에 공개되지 않은 엄선된 딜 정보만을 주 1회 공유드리며, 이해관계가 없는 제3자의 객관적인 평판 조회를 돕습니다.
+        무분별한 정보의 비대칭을 정돈합니다.<br><br>특정 조건에 맞춰 대중에 공개되지 않은 엄선된 딜 정보만을 공유드리며, 이해관계가 없는 제3자의 객관적인 평판 조회를 돕습니다.
       </p>
     </div>
   </div>
 
   <div class="grid-row">
     <div class="cell col-2" style="background: #fff; padding: 100px 64px;">
-      <div class="label-box">The Invitation</div>
+      <div class="label-box">프라이빗 의뢰</div>
       <h2 class="title-kr" style="margin-bottom: 32px; font-size: 34px;">필요한 자원만<br>정확히 요청하십시오.</h2>
       <p class="body-text" style="margin-bottom: 32px;">
         형식적인 네트워킹과 무의미한 미팅은 생략하겠습니다.<br><br>
-        현재 직면하신 <b>포트폴리오 사후관리 난제</b>, 소싱을 희망하시는 <b>딜 섹터 및 라운드</b>, 그리고 <b>심사역님의 프로필</b>. 이 세 가지만 가볍게 남겨주시면, 최적의 타이밍에 가장 확실한 구조 설계로 답하겠습니다.
+        현재 직면하신 <b>포트폴리오 사후관리 난제</b>, 소싱을 희망하시는 <b>투자 기준</b>, 그리고 <b>심사역님의 프로필</b>. 이 세 가지만 가볍게 남겨주시면, 최적의 타이밍에 가장 확실한 구조 설계로 답하겠습니다.
       </p>
     </div>
 
@@ -384,26 +384,26 @@ nav {
         <div class="fp-row">
           <div class="fp-check"></div>
           <div class="fp-text">
-            <div class="fp-title">심사역님의 전문가 프로필 제출 (선택)</div>
+            <div class="fp-title">심사역님의 실무 레퍼런스 제출 (선택)</div>
             <div class="fp-sub">공공/민간 창업지원기관의 외부 심사 및 자문 섭외 시 우선적으로 매칭해 드립니다.</div>
           </div>
         </div>
         <div class="fp-row" style="border-bottom: none;">
           <div class="fp-check"></div>
           <div class="fp-text">
-            <div class="fp-title">주 1회 프라이빗 딜 소싱 뉴스레터 수신</div>
-            <div class="fp-sub">기재해주신 '선호 투자 섹터 및 라운드'에 맞춰, 우량 딜을 조용히 보내드립니다.</div>
+            <div class="fp-title">비공개 딜 소싱 정보 수신</div>
+            <div class="fp-sub">기재해주신 '투자 기준 및 타겟 섹터'에 맞춰, 우량 딜을 조용히 보내드립니다.</div>
           </div>
         </div>
       </div>
       
       <div class="btn-wrapper" style="padding: 0; border-top: 1px solid rgba(19, 34, 56, 0.15);">
         <button onclick="openModal('tally')" class="btn-massive">
-          <span>프라이빗하게 과제 남겨두기</span>
+          <span>비공개로 과제 남겨두기</span>
           <span>➔</span>
         </button>
         <button onclick="openModal('profile')" class="btn-secondary">
-          <span>엔트로프로 전세훈 대표 프로필 열람</span>
+          <span>대표 파트너 이력 및 레퍼런스 확인</span>
           <span>➔</span>
         </button>
       </div>
@@ -411,13 +411,13 @@ nav {
       <div style="background: var(--text-900); padding: 16px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
         <p style="font-size: 13px; color: rgba(255,255,255,0.8); margin: 0; font-family: 'Pretendard', sans-serif; letter-spacing: 0.5px;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-top:-2px; margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          제출된 모든 정보는 철저한 보안 규정 하에 프라이빗하게 관리됩니다.
+          제출된 모든 정보는 기밀 유지(NDA) 기준에 따라 안전하게 관리됩니다.
         </p>
       </div>
       
       <div style="padding: 32px 60px; background: rgba(19, 34, 56, 0.04);">
         <p style="font-size: 13.5px; color: var(--text-700); line-height: 1.6; margin: 0;">
-          <b>P.S.</b> 딜의 가장 큰 해자는 결국 '사람'입니다. 폼을 남기시는 김에 본인 혹은 검토 중인 창업자의 기초 정보(생년월일 등)만 가볍게 덧붙여 주십시오. 대상의 멘탈리티와 잠재적 휴먼 리스크를 꿰뚫어 볼 수 있는 <b>『Deep-Insight 리포트』</b>를 함께 회신해 드립니다.
+          <b>P.S.</b> 아무리 완벽한 엑시트 구조를 짜도, 사람이 무너지면 딜은 깨집니다. 폼을 남기시는 김에 심사역님 본인, 혹은 의사결정을 앞둔 창업자의 기초 정보(생년월일 등)를 가볍게 덧붙여 주십시오. 남들이 숫자만 볼 때 대상의 숨겨진 본성과 조직 리스크를 직관적으로 꿰뚫어 볼 수 있는 <b>『Deep-Insight 리포트』</b>를 은밀한 무기로 함께 쥐여 드립니다.
         </p>
       </div>
     </div>
@@ -441,13 +441,13 @@ nav {
 
 <div class="floating-cta" id="floatingCta">
   <div class="fc-header">
-    <div style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">Private Support</div>
+    <div style="font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 1px;">비공개 데스크</div>
     <div style="cursor: pointer; opacity: 0.8;" onclick="document.getElementById('floatingCta').style.display='none'">✕</div>
   </div>
   <div class="fc-body">
     <h3 class="fc-title" style="margin-bottom: 8px;">엑시트와 사후관리의 난제,<br>조용히 상의해 주십시오.</h3>
     <button onclick="openModal('tally')" class="fc-btn" style="width: 100%;">
-      프라이빗하게 과제 남겨두기
+      비공개로 과제 남겨두기
     </button>
   </div>
 </div>
@@ -457,8 +457,8 @@ nav {
     
     <div class="modal-header">
       <div class="modal-tabs">
-        <button id="btn-tab-profile" class="tab-btn" onclick="showTab('profile')">Executive Profile</button>
-        <button id="btn-tab-tally" class="tab-btn" onclick="showTab('tally')">Private Desk (의뢰)</button>
+        <button id="btn-tab-profile" class="tab-btn" onclick="showTab('profile')">대표 파트너 이력</button>
+        <button id="btn-tab-tally" class="tab-btn" onclick="showTab('tally')">비공개 의뢰 데스크</button>
       </div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
@@ -468,11 +468,11 @@ nav {
       <div id="tab-profile" class="tab-content">
         <div class="cv-header">
           <div class="cv-title">전 세 훈 (Sehoon Jeon)</div>
-          <div class="cv-sub">Business Engineer · 딥테크(화학/에너지/2차전지) 전문</div>
+          <div class="cv-sub">비즈니스 엔지니어 · 딥테크(석유화학/2차전지) 전문가</div>
         </div>
         
         <div class="cv-section">
-          <div class="cv-sec-title">Core Track Record</div>
+          <div class="cv-sec-title">핵심 실무 성과</div>
           <div style="display: flex; gap: 20px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 200px; background: #F4F6F9; padding: 24px; border-radius: 8px; border: 1px solid var(--border-light);">
               <div style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">650억+</div>
@@ -484,19 +484,19 @@ nav {
             </div>
             <div style="flex: 1; min-width: 200px; background: #F4F6F9; padding: 24px; border-radius: 8px; border: 1px solid var(--border-light);">
               <div style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">16년+</div>
-              <div style="font-size: 13px; font-weight: 700; color: var(--text-900);">Full-Cycle 실무<br><span style="color: var(--text-500);">(제조·M&A·VC)</span></div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--text-900);">주요 실무 경력<br><span style="color: var(--text-500);">(제조·M&A·VC)</span></div>
             </div>
           </div>
         </div>
 
         <div class="cv-section">
-          <div class="cv-sec-title">Career Overview</div>
+          <div class="cv-sec-title">주요 경력 요약</div>
           <div class="cv-tl-item">
             <div class="cv-tl-year">2025.07 – 현재</div>
             <div class="cv-tl-body">
               <div class="cv-corp">엔트로프로</div>
-              <div class="cv-role">대표 | Business Engineer</div>
-              <div class="cv-desc">딥테크 기술 기업 발굴 및 투자 타당성 분석, 기업 고객 대상 투자/M&A 구조 설계 자문</div>
+              <div class="cv-role">대표 파트너 | Business Engineer</div>
+              <div class="cv-desc">딥테크 기술 기업 발굴 및 투자 타당성 분석, 펀드 결성 및 투자/M&A 구조 설계 자문</div>
             </div>
           </div>
           <div class="cv-tl-item">
@@ -504,7 +504,7 @@ nav {
             <div class="cv-tl-body">
               <div class="cv-corp">한양대학교 기술지주</div>
               <div class="cv-role">투자팀 이사 | Accelerator</div>
-              <div class="cv-desc">유망 스타트업 발굴 및 8억 원 시드 투자 집행. 사업계획(TIPS) 멘토링 및 후속 투자 유치 연계 지원</div>
+              <div class="cv-desc">유망 스타트업 발굴 및 시드 투자 집행. 사업계획(TIPS) 멘토링 및 후속 투자 유치 연계 지원</div>
             </div>
           </div>
           <div class="cv-tl-item">
@@ -534,10 +534,10 @@ nav {
         </div>
 
         <div class="cv-section">
-          <div class="cv-sec-title">Education & Expertise</div>
+          <div class="cv-sec-title">학력 및 전문 역량</div>
           <ul style="list-style: none; font-size: 14.5px; color: var(--text-900); font-weight: 600; line-height: 1.8;">
-            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[학력]</span> 아주대학교 화학공학 석사 / 아주대학교 화학공학 학사</li>
-            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[자격]</span> 벤처캐피탈리스트 전문가 (한국벤처캐피탈협회), 정보처리기사, 위험물관리산업기사</li>
+            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[학력]</span> 아주대학교 대학원 화학공학과 공학석사 / 아주대학교 화학공학과 공학사</li>
+            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[자격]</span> 벤처캐피탈리스트 전문가 (한국벤처캐피탈협회), 고압가스 안전관리자, 정보처리기사, 위험물관리산업기사</li>
             <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[활동]</span> 중소벤처기업부 등 정부/공공기관 기술·사업성 평가위원 (2021~현재)</li>
             <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[역량]</span> 딥테크 실사(Tech DD), 기업가치평가(DCF/Comps), M&A 딜 구조화, 인수 후 통합(PMI)</li>
           </ul>
@@ -545,7 +545,7 @@ nav {
       </div>
 
       <div id="tab-tally" class="tab-content">
-        <iframe src="https://tally.so/embed/ZjGxBz?hideTitle=1&transparentBackground=1" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="ENTROPRO Private Desk"></iframe>
+        <iframe src="https://tally.so/embed/ZjGxBz?hideTitle=1&transparentBackground=1" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="ENTROPRO 의뢰 폼"></iframe>
       </div>
 
     </div>
@@ -553,7 +553,6 @@ nav {
 </div>
 
 <script>
-// 모달 제어 로직
 function openModal(tabId) {
   var modal = document.getElementById('unifiedModal');
   modal.classList.add('show');
@@ -568,20 +567,16 @@ function closeModal() {
 }
 
 function showTab(tabId) {
-  // 모든 탭 컨텐츠 숨기기
   document.getElementById('tab-profile').classList.remove('active');
   document.getElementById('tab-tally').classList.remove('active');
   
-  // 모든 탭 버튼 비활성화
   document.getElementById('btn-tab-profile').classList.remove('active');
   document.getElementById('btn-tab-tally').classList.remove('active');
   
-  // 선택된 탭과 버튼 활성화
   document.getElementById('tab-' + tabId).classList.add('active');
   document.getElementById('btn-tab-' + tabId).classList.add('active');
 }
 
-// 배경 클릭 시 모달 닫기
 window.onclick = function(event) {
   var modal = document.getElementById('unifiedModal');
   if (event.target == modal) {
