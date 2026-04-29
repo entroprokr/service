@@ -23,7 +23,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Pretendard', 'Montserrat', sans-serif;
   background-color: var(--bg-main);
-  background-image: url('명함 배경.jpg'); 
+  background-image: url('bg.jpg'); 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -161,7 +161,11 @@ nav {
 @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 .fc-header { padding: 16px 20px; background: var(--text-900); color: #fff; display: flex; justify-content: space-between; align-items: center; }
 .fc-body { padding: 32px 24px; text-align: center; }
-.fc-btn { display: block; width: 100%; cursor: pointer; background: var(--text-900); color: #fff; padding: 16px 0; font-size: 15px; font-weight: 800; text-decoration: none; transition: 0.2s; border: 1px solid var(--text-900); letter-spacing: 1px; }
+.fc-btn { 
+  display: block; width: 100%; cursor: pointer; background: var(--text-900); color: #fff; 
+  padding: 16px 0; font-family: 'Pretendard', sans-serif; font-size: 15px; font-weight: 800; 
+  text-decoration: none; transition: 0.2s; border: 1px solid var(--text-900); letter-spacing: 1px; 
+}
 .fc-btn:hover { background: var(--accent-gold); border-color: var(--accent-gold); }
 
 /* ── ALL-IN-ONE MODAL ── */
@@ -213,7 +217,7 @@ nav {
 .cv-role { font-size: 14px; font-weight: 700; color: var(--accent-gold); margin-bottom: 12px; }
 .cv-desc { font-size: 14.5px; color: var(--text-700); line-height: 1.6; word-break: keep-all; font-weight: 500; }
 
-.nav-sq { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--text-900); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 900; margin-right: 8px; }
+.nav-sq { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--text-900); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 900; margin-right: 8px; letter-spacing: 0; }
 .track-record-band { background: rgba(19, 34, 56, 0.03); border-top: 1px solid rgba(19, 34, 56, 0.15); border-bottom: 1px solid rgba(19, 34, 56, 0.15); padding: 16px 0; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; color: var(--text-500); letter-spacing: 2px; }
 .track-record-band span { color: var(--text-900); margin: 0 16px; font-family: 'Pretendard', sans-serif; font-weight: 700; letter-spacing: 0.5px; }
 
@@ -500,7 +504,7 @@ nav {
             <div class="cv-tl-body">
               <div class="cv-corp">한양대학교 기술지주</div>
               <div class="cv-role">투자팀 이사 | Accelerator</div>
-              <div class="cv-desc">유망 스타트업 4개사 발굴 및 시드 투자 집행(8억). 사업계획(TIPS) 멘토링 및 후속 투자 유치 연계 지원</div>
+              <div class="cv-desc">유망 스타트업 발굴 및 시드 투자 집행. 사업계획(TIPS) 멘토링 및 후속 투자 유치 연계 지원</div>
             </div>
           </div>
           <div class="cv-tl-item">
@@ -508,7 +512,7 @@ nav {
             <div class="cv-tl-body">
               <div class="cv-corp">로이투자파트너스</div>
               <div class="cv-role">수석심사역 | Venture Capital</div>
-              <div class="cv-desc">소부장(반도체/2차전지) 딥테크 기업 재무/사업/기술 실사(Tech DD). 200억 펀드 결성을 위한 LP 대상 IR 수행</div>
+              <div class="cv-desc">소부장(반도체/2차전지) 딥테크 기업 재무/사업/기술 실사(Tech DD). 펀드 결성을 위한 LP 대상 IR 수행</div>
             </div>
           </div>
           <div class="cv-tl-item">
@@ -532,7 +536,7 @@ nav {
         <div class="cv-section">
           <div class="cv-sec-title">Education & Expertise</div>
           <ul style="list-style: none; font-size: 14.5px; color: var(--text-900); font-weight: 600; line-height: 1.8;">
-            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[학력]</span> 아주대학교 대학원 화학공학과 공학석사 (GPA 4.44/4.5) / 아주대학교 화학공학 학사</li>
+            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[학력]</span> 아주대학교 대학원 화학공학과 공학석사 (GPA 4.44/4.5) / 인하대학교 화학공학 학사</li>
             <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[자격]</span> 벤처캐피탈리스트 전문가 (한국벤처캐피탈협회), 고압가스 안전관리자, 정보처리기사</li>
             <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[활동]</span> 중소벤처기업부 등 정부/공공기관 기술·사업성 평가위원 (2021~현재)</li>
             <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[역량]</span> 딥테크 정밀 실사(Tech DD), 기업가치평가(DCF/Comps), M&A 딜 구조화, 인수 후 통합(PMI)</li>
@@ -541,7 +545,7 @@ nav {
       </div>
 
       <div id="tab-tally" class="tab-content">
-        <iframe src="https://tally.so/embed/5B460Z?hideTitle=1&transparentBackground=1" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="ENTROPRO Private Desk"></iframe>
+        <iframe src="https://tally.so/embed/ZjGxBz?hideTitle=1&transparentBackground=1" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="ENTROPRO Private Desk"></iframe>
       </div>
 
     </div>
