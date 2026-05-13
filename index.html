@@ -70,28 +70,28 @@ body {
 /* ── LAYOUT (Editorial Grid) ── */
 .container { 
   max-width: 1400px; margin: 0 auto; 
-  border-left: 1px solid rgba(19, 34, 56, 0.15); border-right: 1px solid rgba(19, 34, 56, 0.15); 
+  border-left: var(--border-line); border-right: var(--border-line); 
   background: rgba(255, 255, 255, 0.4);
 }
-.grid-row { display: flex; flex-wrap: wrap; border-bottom: 1px solid rgba(19, 34, 56, 0.15); }
+.grid-row { display: flex; flex-wrap: wrap; border-bottom: var(--border-line); }
 .col-1 { flex: 1 1 100%; }
 .col-2 { flex: 1 1 50%; }
 .col-3 { flex: 1 1 33.333%; }
-.cell { padding: 80px 48px; border-right: 1px solid rgba(19, 34, 56, 0.15); display: flex; flex-direction: column; }
+.cell { padding: 80px 48px; border-right: var(--border-line); display: flex; flex-direction: column; }
 .cell:last-child { border-right: none; }
 
 /* ── NAV & MARQUEE ── */
 nav {
   position: fixed; top: 0; width: 100%; z-index: 100;
-  background: rgba(255, 255, 255, 0.9); border-bottom: 1px solid rgba(19, 34, 56, 0.15);
+  background: rgba(255, 255, 255, 0.9); border-bottom: var(--border-line);
   backdrop-filter: blur(12px);
 }
 .nav-inner {
   max-width: 1400px; margin: 0 auto; padding: 0 32px; height: 64px;
   display: flex; justify-content: space-between; align-items: center;
-  border-left: 1px solid rgba(19, 34, 56, 0.15); border-right: 1px solid rgba(19, 34, 56, 0.15);
+  border-left: var(--border-line); border-right: var(--border-line);
 }
-.nav-brand { font-weight: 900; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+.nav-brand { font-weight: 900; font-size: 18px; display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; }
 .nav-brand img { height: 20px; }
 .nav-cv-link {
   font-size: 13px; font-weight: 800; color: var(--text-900); text-decoration: none; cursor: pointer;
@@ -103,7 +103,7 @@ nav {
 .marquee-wrap {
   width: 100%; overflow: hidden; background: var(--text-900); color: #fff;
   padding: 14px 0; display: flex; white-space: nowrap; margin-top: 64px;
-  border-bottom: 1px solid rgba(19, 34, 56, 0.15);
+  border-bottom: var(--border-line);
 }
 .marquee-content {
   display: flex; animation: scrollText 20s linear infinite;
@@ -114,8 +114,8 @@ nav {
 
 /* ── HERO ── */
 .hero-wrapper { position: relative; padding: 120px 48px 0; }
-.hero-stat-bar { display: flex; border-top: 1px solid rgba(19, 34, 56, 0.15); background: #fff; }
-.hero-stat { flex: 1; padding: 36px 48px; border-right: 1px solid rgba(19, 34, 56, 0.15); }
+.hero-stat-bar { display: flex; border-top: var(--border-line); background: #fff; }
+.hero-stat { flex: 1; padding: 36px 48px; border-right: var(--border-line); }
 .hero-stat:last-child { border-right: none; }
 .stat-num { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 900; color: var(--text-900); margin-bottom: 10px; letter-spacing: -1px; }
 .stat-label { font-size: 13.5px; font-weight: 700; color: var(--text-700); line-height: 1.5; }
@@ -218,7 +218,7 @@ nav {
 .cv-desc { font-size: 14.5px; color: var(--text-700); line-height: 1.6; word-break: keep-all; font-weight: 500; }
 
 .nav-sq { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--text-900); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 900; margin-right: 8px; letter-spacing: 0; }
-.track-record-band { background: rgba(19, 34, 56, 0.03); border-top: 1px solid rgba(19, 34, 56, 0.15); border-bottom: 1px solid rgba(19, 34, 56, 0.15); padding: 16px 0; text-align: center; font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 800; color: var(--text-500); letter-spacing: 1px; }
+.track-record-band { background: rgba(19, 34, 56, 0.03); border-top: var(--border-line); border-bottom: var(--border-line); padding: 16px 0; text-align: center; font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 800; color: var(--text-500); letter-spacing: 1px; }
 .track-record-band span { color: var(--text-900); margin: 0 16px; font-weight: 800; letter-spacing: 0.5px; }
 
 @media(max-width: 1024px) {
@@ -243,12 +243,12 @@ nav {
 <nav>
   <div class="nav-inner">
     <div class="nav-brand">
-      <img src="logo.png" alt="ENTROPRO">
+      <img src="logo.png" alt="ENTROPRO" onerror="this.style.display='none'">
       ENTROPRO
     </div>
     <div style="display: flex; align-items: center; gap: 24px;">
-      <a onclick="openModal('profile')" class="nav-cv-link">대표 파트너 이력 및 레퍼런스</a>
-      <div class="label-outline" style="margin: 0; padding: 6px 12px; display: none; @media(min-width: 600px){ display: inline-flex; }">Business Engineer</div>
+      <a onclick="openModal('profile')" class="nav-cv-link">대표 파트너 이력</a>
+      <button onclick="openModal('tally')" class="label-outline" style="cursor:pointer; border:none; background:var(--text-900); color:#fff; padding:8px 16px;">비공개 데스크</button>
     </div>
   </div>
 </nav>
@@ -273,63 +273,64 @@ nav {
       <div class="label-box">비즈니스 엔지니어</div>
       <h1 class="text-huge" style="margin-bottom: 24px;">STRUCTURE<br>THE EXIT.</h1>
       <p class="title-kr" style="margin-bottom: 40px; max-width: 800px;">
-        자본의 흐름을 잇고,<br>엑시트의 구조를 설계합니다.
+        막힌 투자의 활로를 뚫고,<br>확실한 자금 회수(Exit) 구조를 짭니다.
       </p>
       <p class="body-text" style="max-width: 760px; font-weight: 500; font-size: 17px;">
-        시간만 주어지면 직접 완벽하게 해내실 수 있다는 것을 압니다. <br>하지만 새로운 펀드 결성과 투자자(LP) 모집이라는 본업만으로도 <br>심사역님과 의사결정권자 분들의 하루는 부족합니다.<br><br>
-        엑시트가 막힌 포트폴리오의 턴어라운드, 피가 마르는 사후관리...<br><b>비즈니스 엔지니어인 제가 파트너로서 함께 뛰겠습니다.</b>
+        펀드 결성과 투자자(LP) 모집만으로도 심사역님의 하루는 부족합니다.<br>
+        엑시트가 막힌 포트폴리오, 끝없는 사후관리의 압박...<br>
+        <b>단순히 실무를 대행할 사람이 아니라, 문제를 꿰뚫고 구조를 다시 짤 해결사가 필요합니다.</b><br><br>
+        투자 현장에서 650억 원을 직접 집행해 본 감각으로, 동등한 전략적 파트너로서 함께 문제를 풉니다.
       </p>
     </div>
     
     <div class="hero-stat-bar">
       <div class="hero-stat">
         <div class="stat-num">650억+</div>
-        <div class="stat-label">총 투자 집행 규모<br><span style="font-weight:500; color:var(--text-500);">(CVC / VC / AC)</span></div>
+        <div class="stat-label">총 투자 집행 규모<br><span style="font-weight:500; color:var(--text-500);">심사역의 시선으로 딜을 재설계합니다.</span></div>
       </div>
       <div class="hero-stat">
         <div class="stat-num">13건</div>
-        <div class="stat-label">투자 및 M&A 실행 건수<br><span style="font-weight:500; color:var(--text-500);">(전략투자 · 구주 · LP 출자)</span></div>
+        <div class="stat-label">투자 및 매각(M&A) 성공<br><span style="font-weight:500; color:var(--text-500);">(전략 투자, 구주 매각, 펀드 출자 등)</span></div>
       </div>
       <div class="hero-stat">
         <div class="stat-num">16년+</div>
-        <div class="stat-label">딥테크 실무 경력<br><span style="font-weight:500; color:var(--text-500);">(석유화학·2차전지 현장 + M&A + VC)</span></div>
+        <div class="stat-label">딥테크 전문 경력<br><span style="font-weight:500; color:var(--text-500);">(산업 현장 + 기업 인수 + 벤처투자)</span></div>
       </div>
     </div>
   </div>
 
   <div class="track-record-band">
     핵심 실무 거점 : 
-    <span>대림산업</span> • 
-    <span>이수화학</span> • 
-    <span>로이투자파트너스</span> • 
-    <span>한양대 기술지주</span>
+    <span>대림그룹 투자팀</span> • 
+    <span>로이투자파트너스 (VC)</span> • 
+    <span>한양대 기술지주 (AC)</span>
   </div>
 
   <div class="grid-row">
     <div class="cell col-1 cell-dark">
-      <div class="label-box" style="background: #fff; color: var(--text-900);">업무 구조 (THE STRUCTURE)</div>
-      <h2 class="title-kr" style="margin-bottom: 56px;">문제를 주시면, 구조를 짜서 함께 해결합니다.</h2>
+      <div class="label-box" style="background: #fff; color: var(--text-900);">핵심 전략</div>
+      <h2 class="title-kr" style="margin-bottom: 56px;">문제를 주시면, 확실한 구조로 답합니다.</h2>
       
       <div style="display: flex; flex-wrap: wrap; gap: 64px;">
         <div style="flex: 1; min-width: 300px;">
           <h3 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 20px; line-height: 1;">01</h3>
-          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">마찰 비용을 없애는 딜 구조화</h4>
+          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">소음 없는 맞춤형 딜 연결</h4>
           <p class="body-text">
-            최근 특정 하우스의 딜 소싱 의뢰를 받아, 10곳 이상의 투자사 네트워크를 가동해 이틀 만에 조건에 부합하는 13개 유망 기업을 선별 매칭했습니다.<br>시장에 떠도는 정보의 비대칭을 끊어내고, 명확한 기준만 주시면 가장 확실한 딜을 찾아 연결합니다.
+            무작정 필터링하여 기계적으로 리스트를 뽑지 않습니다. 수많은 딜을 검토하며 쌓인 예리한 직관으로 시장의 소음 속에서 진짜 신호만 가려냅니다. 명확한 기준만 주시면 대중에 공개되지 않은 알짜 기업을 확실하게 찾아 연결합니다.
           </p>
         </div>
         <div style="flex: 1; min-width: 300px;">
           <h3 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 20px; line-height: 1;">02</h3>
-          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">엑시트의 문턱을 넘는 턴어라운드</h4>
+          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">막힌 포트폴리오 문제 해결</h4>
           <p class="body-text">
-            여러 가지 이슈가 있어서 Exit 가능성이 낮은 포트폴리오 기업에 일종의 인하우스 파트너로 투입됩니다.<br>각 분야별 전문가 네트워크를 가동하여 기업의 체질을 개선하고, 투자사/기업 모두가 수용 가능한 매력적인 엑시트 구조를 설계합니다.
+            막연하게 시간만 끄는 포트폴리오 기업에 조용히 투입됩니다. 감정을 빼고 기업의 뼈대를 뜯어고쳐, 투자사와 기업 모두가 납득하고 수용할 수 있는 현실적인 엑시트(Exit) 길을 만듭니다.
           </p>
         </div>
         <div style="flex: 1; min-width: 300px;">
           <h3 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900; color: var(--accent-gold); margin-bottom: 20px; line-height: 1;">03</h3>
-          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">조용하고 묵직한 기밀 유지</h4>
+          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">철저한 비밀 유지</h4>
           <p class="body-text">
-            정보가 생명인 시장에서, 하우스의 약점을 노출하지 않고 조용히 움직입니다.<br>대외적으로 해당 딜과 관련된 정보를 최대한 비공개로 관리하며, 불필요한 시장의 소음을 차단합니다.
+            정보가 곧 생명입니다. 투자 하우스의 약점을 노출하지 않고 은밀히 움직입니다. 대외적으로 진행되는 모든 딜과 정보는 완벽하게 비밀로 유지하여 불필요한 소문을 차단합니다.
           </p>
         </div>
       </div>
@@ -339,17 +340,17 @@ nav {
   <div class="grid-row">
     <div class="cell col-3" style="background: rgba(255,255,255,0.65);">
       <div class="font-eng" style="font-size: 48px; font-weight: 900; color: var(--text-900); margin-bottom: 24px; line-height: 1;">I.</div>
-      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">사후관리 및<br>엑시트 구조화</h3>
+      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">사후관리 및<br>엑시트 설계</h3>
       <p class="body-text">
-        엑시트가 막막한 포트폴리오에 인하우스 파트너로 직접 투입됩니다.<br><br>딜의 마찰 비용을 줄이고, 시장이 원하는 매력적인 턴어라운드 구조로 재배열하여 엑시트의 문턱을 넘게 만듭니다.
+        엑시트가 막힌 포트폴리오의 구조적 결함을 찾아 고칩니다.<br><br>쓸데없는 비용과 마찰을 줄이고, 시장이 원하는 매력적인 회사로 탈바꿈시켜 다음 라운드의 문턱을 넘게 만듭니다.
       </p>
     </div>
     
     <div class="cell col-3" style="background: #fff;">
       <div class="font-eng" style="font-size: 48px; font-weight: 900; color: var(--text-900); margin-bottom: 24px; line-height: 1;">II.</div>
-      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">창업지원기관 강의·<br>심사·자문 매칭</h3>
+      <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">비공개 전문가<br>네트워크 연결</h3>
       <p class="body-text">
-        창업보육기관과 실력 있는 투자심사역을 조용히 잇습니다.<br><br>하단 폼에 심사역님의 프로필을 가볍게 남겨주시면, 기관의 섭외 조건과 부합할 때만 별도로 연락드립니다.
+        형식적인 자문 매칭이 아닙니다. 실력 있는 심사역과 경영자들을 조용히 잇습니다.<br><br>프로필을 남겨주시면, 확실한 시너지가 날 수 있는 자리와 상황에만 은밀하게 연락드립니다.
       </p>
     </div>
 
@@ -357,7 +358,7 @@ nav {
       <div class="font-eng" style="font-size: 48px; font-weight: 900; color: var(--text-900); margin-bottom: 24px; line-height: 1;">III.</div>
       <h3 class="title-kr" style="font-size: 22px; margin-bottom: 20px;">비공개 딜 소싱 &<br>객관적 평판 조회</h3>
       <p class="body-text">
-        무분별한 정보의 비대칭을 정돈합니다.<br><br>특정 조건에 맞춰 대중에 공개되지 않은 엄선된 딜 정보만을 공유드리며, 이해관계가 없는 제3자의 객관적인 평판 조회를 돕습니다.
+        쏟아지는 정보 속에서 핵심만 추려냅니다.<br><br>요청하신 조건에 딱 맞는 비공개 우량 딜의 정보만 공유하며, 이해관계가 얽히지 않은 제3자의 냉정한 평판 조회를 돕습니다.
       </p>
     </div>
   </div>
@@ -365,10 +366,10 @@ nav {
   <div class="grid-row">
     <div class="cell col-2" style="background: #fff; padding: 100px 64px;">
       <div class="label-box">프라이빗 의뢰</div>
-      <h2 class="title-kr" style="margin-bottom: 32px; font-size: 34px;">필요한 자원만<br>정확히 요청하십시오.</h2>
+      <h2 class="title-kr" style="margin-bottom: 32px; font-size: 34px;">목적이 뚜렷한 요청에만<br>응답합니다.</h2>
       <p class="body-text" style="margin-bottom: 32px;">
-        형식적인 네트워킹과 무의미한 미팅은 생략하겠습니다.<br><br>
-        현재 직면하신 <b>포트폴리오 사후관리 난제</b>, 소싱을 희망하시는 <b>투자 기준</b>, 그리고 <b>심사역님의 프로필</b>. 이 세 가지만 가볍게 남겨주시면, 최적의 타이밍에 가장 확실한 구조 설계로 답하겠습니다.
+        의미 없는 네트워킹으로 서로의 에너지를 낭비하지 않습니다.<br><br>
+        해결해야 할 <b>포트폴리오 문제</b>, 찾고 계신 <b>정확한 투자 기준</b>, 그리고 <b>심사역님의 프로필</b>. 이 핵심만 가볍게 남겨주시면, 직관적이고 확실한 해결책으로 답하겠습니다.
       </p>
     </div>
 
@@ -377,33 +378,33 @@ nav {
         <div class="fp-row">
           <div class="fp-check"></div>
           <div class="fp-text">
-            <div class="fp-title">시간이 부족해 미뤄둔 포트폴리오 고민</div>
-            <div class="fp-sub">인하우스 투입을 통한 턴어라운드 및 엑시트 구조화 등 조용히 상의해 주십시오.</div>
+            <div class="fp-title">해결되지 않는 포트폴리오 문제 의뢰</div>
+            <div class="fp-sub">객관적인 진단을 통해 꼬인 구조를 풀고 엑시트 전략을 상의해 주십시오.</div>
           </div>
         </div>
         <div class="fp-row">
           <div class="fp-check"></div>
           <div class="fp-text">
-            <div class="fp-title">심사역님의 실무 레퍼런스 제출 (선택)</div>
-            <div class="fp-sub">공공/민간 창업지원기관의 외부 심사 및 자문 섭외 시 우선적으로 매칭해 드립니다.</div>
+            <div class="fp-title">비공개 핵심 네트워크 합류 (선택)</div>
+            <div class="fp-sub">확실한 자문 및 전략적 딜 연계가 필요할 때 연락받을 프로필을 남겨주십시오.</div>
           </div>
         </div>
         <div class="fp-row" style="border-bottom: none;">
           <div class="fp-check"></div>
           <div class="fp-text">
             <div class="fp-title">비공개 딜 소싱 정보 수신</div>
-            <div class="fp-sub">기재해주신 '투자 기준 및 타겟 섹터'에 맞춰, 우량 딜을 조용히 보내드립니다.</div>
+            <div class="fp-sub">기재해주신 '투자 기준과 관심 분야'에 딱 맞는 우량 딜만 조용히 보내드립니다.</div>
           </div>
         </div>
       </div>
       
-      <div class="btn-wrapper" style="padding: 0; border-top: 1px solid rgba(19, 34, 56, 0.15);">
+      <div class="btn-wrapper" style="padding: 0; border-top: var(--border-line);">
         <button onclick="openModal('tally')" class="btn-massive">
           <span>비공개로 과제 남겨두기</span>
           <span>➔</span>
         </button>
         <button onclick="openModal('profile')" class="btn-secondary">
-          <span>대표 파트너 이력 및 레퍼런스 확인</span>
+          <span>대표 파트너 이력</span>
           <span>➔</span>
         </button>
       </div>
@@ -417,7 +418,7 @@ nav {
       
       <div style="padding: 32px 60px; background: rgba(19, 34, 56, 0.04);">
         <p style="font-size: 13.5px; color: var(--text-700); line-height: 1.6; margin: 0;">
-          <b>P.S.</b> 아무리 완벽한 엑시트 구조를 짜도, 사람이 무너지면 딜은 깨집니다. 폼을 남기시는 김에 심사역님 본인, 혹은 의사결정을 앞둔 창업자의 기초 정보(생년월일 등)를 가볍게 덧붙여 주십시오. 남들이 숫자만 볼 때 대상의 숨겨진 본성과 조직 리스크를 직관적으로 꿰뚫어 볼 수 있는 <b>『Deep-Insight 리포트』</b>를 은밀한 무기로 함께 쥐여 드립니다.
+          <b>P.S.</b> 아무리 완벽하게 구조를 짜도, 결국 결정을 내리는 것은 '사람'입니다. 폼을 남기시면서 딜에 얽힌 의사결정권자의 성향이나 조직 내 역학관계를 가볍게 덧붙여 주십시오. 남들이 재무제표의 숫자만 볼 때, 상대의 행동 패턴과 숨겨진 리스크를 꿰뚫어 볼 수 있는 <b>『Deep-Insight 리포트』</b>를 은밀한 무기로 쥐여 드립니다.
         </p>
       </div>
     </div>
@@ -445,7 +446,7 @@ nav {
     <div style="cursor: pointer; opacity: 0.8;" onclick="document.getElementById('floatingCta').style.display='none'">✕</div>
   </div>
   <div class="fc-body">
-    <h3 class="fc-title" style="margin-bottom: 8px;">엑시트와 사후관리의 난제,<br>조용히 상의해 주십시오.</h3>
+    <h3 class="fc-title" style="margin-bottom: 8px;">엑시트와 사후관리의 난제,<br>확실한 구조로 답합니다.</h3>
     <button onclick="openModal('tally')" class="fc-btn" style="width: 100%;">
       비공개로 과제 남겨두기
     </button>
@@ -468,11 +469,14 @@ nav {
       <div id="tab-profile" class="tab-content">
         <div class="cv-header">
           <div class="cv-title">전 세 훈 (Sehoon Jeon)</div>
-          <div class="cv-sub">비즈니스 엔지니어 · 딥테크(정밀화학/2차전지/소부장) 전문가</div>
+          <div class="cv-sub">비즈니스 엔지니어 · 딥테크(석유화학/2차전지) 전문가</div>
         </div>
         
         <div class="cv-section">
           <div class="cv-sec-title">핵심 실무 성과</div>
+          <p style="font-size:15px; color:var(--text-700); line-height:1.75; margin-bottom:28px; word-break:keep-all; font-weight:500;">
+            핵심은 하나입니다. <b style="color:var(--text-900);">수백억의 자본을 집행하며 수많은 기업의 명암을 지켜본 감각이 귀사의 곁에 있다는 것.</b> 대기업 투자팀에서 642억 원을 직접 투자하고, 벤처캐피탈 수석심사역으로 수많은 딜을 실사했으며, 창업기획자로서 투자 전주기를 직접 경험한 내공을 투입합니다.
+          </p>
           <div style="display: flex; gap: 20px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 200px; background: #F4F6F9; padding: 24px; border-radius: 8px; border: 1px solid var(--border-light);">
               <div style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">650억+</div>
@@ -480,11 +484,11 @@ nav {
             </div>
             <div style="flex: 1; min-width: 200px; background: #F4F6F9; padding: 24px; border-radius: 8px; border: 1px solid var(--border-light);">
               <div style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">13건</div>
-              <div style="font-size: 13px; font-weight: 700; color: var(--text-900);">투자/M&A 실행 건수<br><span style="color: var(--text-500);">(전략투자·구주·LP)</span></div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--text-900);">투자 및 기업 매각 성공<br><span style="color: var(--text-500);">(전략투자·구주·LP)</span></div>
             </div>
             <div style="flex: 1; min-width: 200px; background: #F4F6F9; padding: 24px; border-radius: 8px; border: 1px solid var(--border-light);">
               <div style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; color: var(--accent-gold); margin-bottom: 8px;">16년+</div>
-              <div style="font-size: 13px; font-weight: 700; color: var(--text-900);">주요 실무 경력<br><span style="color: var(--text-500);">(제조·M&A·VC)</span></div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--text-900);">주요 실무 경험<br><span style="color: var(--text-500);">(제조·M&A·VC)</span></div>
             </div>
           </div>
         </div>
@@ -492,43 +496,43 @@ nav {
         <div class="cv-section">
           <div class="cv-sec-title">주요 경력 요약</div>
           <div class="cv-tl-item">
-            <div class="cv-tl-year">2025.07 – 현재</div>
+            <div class="cv-tl-year">2024.01 – 현재</div>
             <div class="cv-tl-body">
-              <div class="cv-corp">엔트로프로</div>
+              <div class="cv-corp">엔트로프로 (ENTROPRO)</div>
               <div class="cv-role">대표 파트너 | Business Engineer</div>
-              <div class="cv-desc">딥테크 기술 기업 발굴 및 투자 타당성 분석, 펀드 결성 및 투자/M&A 구조 설계 자문</div>
+              <div class="cv-desc">딥테크 기술 기업 발굴 및 투자 타당성 분석, 펀드 결성 및 기업 턴어라운드/M&A 구조 설계 자문</div>
             </div>
           </div>
           <div class="cv-tl-item">
             <div class="cv-tl-year">2023.01 – 2023.12</div>
             <div class="cv-tl-body">
-              <div class="cv-corp">한양대학교 기술지주</div>
-              <div class="cv-role">투자팀 이사 | Accelerator</div>
-              <div class="cv-desc">유망 스타트업 발굴 및 시드 투자 집행. 사업계획(TIPS) 멘토링 및 후속 투자 유치 연계 지원</div>
+              <div class="cv-corp">한양대학교 기술지주 (AC)</div>
+              <div class="cv-role">투자팀 이사</div>
+              <div class="cv-desc">유망 스타트업 발굴 및 초기 투자 집행. 정부 지원 사업(TIPS) 추천 및 후속 투자 유치 연계</div>
             </div>
           </div>
           <div class="cv-tl-item">
             <div class="cv-tl-year">2021.10 – 2022.12</div>
             <div class="cv-tl-body">
-              <div class="cv-corp">로이투자파트너스</div>
-              <div class="cv-role">수석심사역 | Venture Capital</div>
-              <div class="cv-desc">소부장(반도체/2차전지) 딥테크 기업 재무/사업/기술 실사(Tech DD). 펀드 결성을 위한 LP 대상 IR 수행</div>
+              <div class="cv-corp">로이투자파트너스 (VC)</div>
+              <div class="cv-role">수석심사역</div>
+              <div class="cv-desc">첨단 기술 기업 재무 및 기술력 실사(Tech DD). 펀드 결성을 위한 투자자(LP) 대상 발표 진행</div>
             </div>
           </div>
           <div class="cv-tl-item">
-            <div class="cv-tl-year">2015.06 – 2021.08</div>
+            <div class="cv-tl-year">2015.01 – 2021.08</div>
             <div class="cv-tl-body">
-              <div class="cv-corp">대림 (DL그룹)</div>
-              <div class="cv-role">전략기획실 투자팀 차장 | CVC & M&A</div>
-              <div class="cv-desc">그룹 CVC 운영 체계 구축 및 642억 원 투자 집행. 반도체 특수가스 신사업 상업화 총괄, 유럽 정밀화학사 M&A 검토</div>
+              <div class="cv-corp">대림 / DL그룹 (CVC)</div>
+              <div class="cv-role">전략기획실 투자팀 차장</div>
+              <div class="cv-desc">그룹 투자 체계 구축 및 <b>642억 원 직접 투자</b>. 반도체 특스가스 신사업 상업화 총괄 및 유럽 기업 인수 검토</div>
             </div>
           </div>
           <div class="cv-tl-item">
             <div class="cv-tl-year">2008.03 – 2014.12</div>
             <div class="cv-tl-body">
               <div class="cv-corp">이수화학 / DL케미칼</div>
-              <div class="cv-role">사업기획팀 대리 / 사원 | 신사업 개발</div>
-              <div class="cv-desc">전자용 솔벤트 신사업 생산 시설 투자 및 상업화 주도(연 50억 매출). 석유화학 글로벌 합작법인(JV) 타당성 분석</div>
+              <div class="cv-role">사업기획팀 | 신사업 개발</div>
+              <div class="cv-desc">신사업 생산 시설 투자 및 제품 상업화 주도(연 50억 원 매출 달성). 해외 합작법인(JV) 설립 타당성 분석</div>
             </div>
           </div>
         </div>
@@ -537,14 +541,19 @@ nav {
           <div class="cv-sec-title">학력 및 전문 역량</div>
           <ul style="list-style: none; font-size: 14.5px; color: var(--text-900); font-weight: 600; line-height: 1.8;">
             <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[학력]</span> 아주대학교 대학원 화학공학과 공학석사 / 아주대학교 화학공학과 공학사</li>
-            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[자격]</span> 벤처캐피탈리스트 전문가 (한국벤처캐피탈협회), 고압가스 안전관리자, 정보처리기사, 위험물관리산업기사</li>
-            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[활동]</span> 중소벤처기업부 등 정부/공공기관 기술·사업성 평가위원 (2021~현재)</li>
-            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[역량]</span> 딥테크 실사(Tech DD), 기업가치평가(DCF/Comps), M&A 딜 구조화, 인수 후 통합(PMI)</li>
+            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[자격]</span> 벤처캐피탈리스트 전문가 (한국벤처캐피탈협회), 고압가스 안전관리자, 정보처리기사</li>
+            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[활동]</span> 중소벤처기업부 등 정부 및 공공기관 기술·사업성 평가위원 (2021년~현재)</li>
+            <li style="margin-bottom: 8px;">• <span style="color: var(--text-700);">[역량]</span> 딥테크 실사(Tech DD), 기업가치평가(DCF/Comps), M&A 구조 설계, 기업 인수 후 통합(PMI)</li>
           </ul>
         </div>
       </div>
 
       <div id="tab-tally" class="tab-content">
+        <div style="background:rgba(197,154,92,0.08); border:1px solid rgba(197,154,92,0.25); padding:20px 24px; margin-bottom:32px;">
+          <p style="font-size:13px; font-weight:700; color:var(--text-900); margin:0; line-height:1.6;">
+            💡 <b>상호 탐색을 위한 첫 만남은 완전 무료입니다.</b> 현재 직면한 난제를 편하게 남겨주시면, 검토 후 연락드립니다. 제출된 모든 정보는 엄격한 기밀(NDA)로 철저히 보호됩니다.
+          </p>
+        </div>
         <iframe src="https://tally.so/embed/ZjGxBz?hideTitle=1&transparentBackground=1" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" title="ENTROPRO 의뢰 폼"></iframe>
       </div>
 
